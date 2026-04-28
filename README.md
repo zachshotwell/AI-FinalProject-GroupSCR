@@ -1,6 +1,7 @@
 # AI Final Project
 
 **Members:** Alan Ray · Zach Shotwell · Miguel Moreno Coin
+
 **Course:** Artificial Intelligence, Appalachian State University
 
 ## Projects
