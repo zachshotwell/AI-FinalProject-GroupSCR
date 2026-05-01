@@ -16,6 +16,8 @@ Results differ sharply between the two stations. At the well-calibrated station 
 
 ### DoriaNET
 
-CNN-based image classification of post-hurricane building damage (FEMA HAZUS states 0–5) from UAV aerial imagery.
+Image classification of post-hurricane building damage (FEMA HAZUS states 0–5) from UAV aerial imagery, using the DoriaNET dataset (Cheng, Behzadan & Noshadravan 2021): 271 frames from Marsh Harbor, Bahamas, after Hurricane Dorian, with 1,458 (frame, building) instances across 147 distinct buildings.
+
+Three architectures are benchmarked along the standard course progression: an MLP baseline, a standard CNN trained from scratch, and a transfer-learning model based on MobileNetV2 with two-step fine-tuning. The MLP and from-scratch CNN both collapse to majority-class prediction (22% test accuracy) — a clean reproduction of the data-scarcity regime that motivates transfer learning, given only ~800 training instances spread across 6 classes. MobileNetV2 reaches 40% test accuracy and 69% ±1 accuracy by leveraging ImageNet-pretrained features. Our absolute numbers sit closer to the paper's *unseen-data* generalization results (Dataset 2: 30% / 64%) than to their *within-split* numbers (Dataset 1: 61% / 90%), reflecting our deliberate use of a building-stratified split rather than the paper's row-level split, which leaks the same building across train and test.
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/zachshotwell/AI-FinalProject-GroupSCR/blob/main/DoriaNETProject/DoriaNET.ipynb)
